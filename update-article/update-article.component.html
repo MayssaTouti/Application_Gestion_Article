@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <h2>Modifier un article :</h2>
+    </div>
+    <form>
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Article </label>
+            <input readonly type="text" [(ngModel)]="currentArticle.idArt" name="idArt" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>titre Article </label>
+            <input type="text" [(ngModel)]="currentArticle.titre" name="titre" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label> Description Article </label>
+            <input type="texte" [(ngModel)]="currentArticle.description" name="description" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [ngModel]="currentArticle.datePoste | date: 'yyyy-MM-dd'" (ngModelChange)="currentArticle.datePoste= $event" name="datePoste" class="form-control">
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="updateArticle()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>
